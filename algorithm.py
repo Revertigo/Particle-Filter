@@ -1,10 +1,10 @@
 import random
 from math import *
 import numpy as np
-
 from robot import Robot
 from visualization import displayParticals, visualization_init
 from config import bearing_noise, steering_noise, distance_noise
+
 
 def particle_filter(motions, measurements, ground_truths, N=500):
     # --------
@@ -18,12 +18,11 @@ def particle_filter(motions, measurements, ground_truths, N=500):
         r.set_noise(bearing_noise, steering_noise, distance_noise)
         p.append(r)
 
-    # --------
-    #
-    # Update particles
-    #
     visualization_init()
     displayParticals(p, np.ones(len(p)), ground_truths[0], 2)
+    # --------
+    # Update particles
+    #
     for t in range(len(motions)):
 
         # Update weights
@@ -52,6 +51,7 @@ def particle_filter(motions, measurements, ground_truths, N=500):
 
         displayParticals(p, w, ground_truths[t])
     return get_position(p)
+
 
 def get_position(p):
     x = 0.0

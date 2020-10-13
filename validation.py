@@ -2,6 +2,8 @@ from math import *
 
 tolerance_xy = 15.0  # Tolerance for localization in the x and y directions.
 tolerance_orientation = 0.25  # Tolerance for orientation.
+
+
 # --------
 #
 # The following code prints the measurements associated
@@ -37,4 +39,3 @@ def check_output(final_robot, estimated_position):
     correct = error_x < tolerance_xy and error_y < tolerance_xy \
               and error_orientation < tolerance_orientation
     return correct
-

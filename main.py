@@ -9,18 +9,18 @@ from validation import print_measurements, check_output
 
 # The following code generates ground truth to be used by the animation
 def generate_ground_truth_loc(motions):
-    myrobot = Robot()
-    myrobot.set_noise(bearing_noise, steering_noise, distance_noise)
+    robot = Robot()
+    robot.set_noise(bearing_noise, steering_noise, distance_noise)
 
     Z = []
     T = len(motions)
     pos = []
     for t in range(T):
-        myrobot = myrobot.move(motions[t])
-        Z.append(myrobot.sense(False))
-        pos.append((myrobot.x, myrobot.y))
+        robot = robot.move(motions[t])
+        Z.append(robot.sense(False))
+        pos.append((robot.x, robot.y))
     # print 'Robot:    ', myrobot
-    return [myrobot, Z, np.array(pos)]
+    return [robot, Z, np.array(pos)]
 
 if __name__ == '__main__':
     number_of_iterations = 100

@@ -1,11 +1,13 @@
 import numpy as np
-from config import *
 import matplotlib.pyplot as plt
 from matplotlib import pylab
+from config import *
+
 
 def visualization_init():
     fig = pylab.gcf()
     fig.canvas.set_window_title('Particle Filter')
+
 
 def displayParticals(p: np.ndarray, w: np.ndarray,
                      gt: np.ndarray, pause_time: float = 0.1):
