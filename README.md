@@ -12,5 +12,5 @@
 # Overview
 This project is an implementation of paritcle filter algorithm as part of Navigation Algorithms course.
 The algorithm is used in the context of localization and tracking a moving object in a 2D space dimension.
-The simulation (of the algorithm) shows how a collection of particles able to trace a "robot" particle based on measures from
+The simulation (of the algorithm) shows how a collection of particles able to trace a "robot" based on measures from
 landmarks and probability.
